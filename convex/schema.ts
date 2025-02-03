@@ -1,5 +1,5 @@
-import { defineSchema, defineTable } from "convex/server"
-import { v } from "convex/values"
+import { defineSchema, defineTable } from "convex/server";
+import { v } from "convex/values";
 
 export default defineSchema({
     users: defineTable({
@@ -18,13 +18,15 @@ export default defineSchema({
         status: v.string(),
         streamCallId: v.string(),
         candidateId: v.string(),
-        interviewerids: v.array(v.string()),
-    }).index("by_candidate_id", ["candidateId"]).index("by_stream_call_id", ["streamCallId"]),
+        interviewerIds: v.array(v.string()),
+    })
+        .index("by_candidate_id", ["candidateId"])
+        .index("by_stream_call_id", ["streamCallId"]),
 
     comments: defineTable({
         content: v.string(),
         rating: v.number(),
         interviewerId: v.string(),
-        interviewId: v.id("interviews")
+        interviewId: v.id("interviews"),
     }).index("by_interview_id", ["interviewId"]),
 });
