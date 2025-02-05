@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { SparkleIcon } from "lucide-react";
-import { useUserRole } from "./hooks/useUserRole";
+import { useUserRole } from "../hooks/useUserRole";
 
 function DasboardBtn() {
   const { isCandidate, isInterviewer, isLoading } = useUserRole();
