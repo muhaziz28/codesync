@@ -13,6 +13,7 @@ type User = Doc<"users">;
 export const groupInterviews = (interviews: Interview[]) => {
   if (!interviews) return {};
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return interviews.reduce((acc: any, interview: Interview) => {
     const date = new Date(interview.startTime);
     const now = new Date();
